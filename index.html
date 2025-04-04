@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator & Scanner</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>QR Code Generator & Scanner</h1>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="generate">Generate QR Code</button>
+            <button class="tab-btn" data-tab="scan">Scan QR Code</button>
+        </div>
+        
+        <div class="tab-content">
+
+            <div class="tab-pane active" id="generate">
+                <h2>Generate QR Code</h2>
+                <div class="input-group">
+                    <input type="text" id="qr-text" placeholder="Enter text or URL">
+                    <button id="generate-btn">Generate</button>
+                </div>
+                <div id="qrcode-container">
+                    <div id="qrcode"></div>
+                    <button id="download-btn" disabled>Download QR Code</button>
+                </div>
+            </div>
+            
+            <div class="tab-pane" id="scan">
+                <h2>Scan QR Code</h2>
+                <div id="reader"></div>
+                <div id="scan-result">
+                    <h3>Scan Result:</h3>
+                    <p id="result">No result</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
